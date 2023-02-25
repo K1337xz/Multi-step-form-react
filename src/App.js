@@ -16,7 +16,6 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route>
 			<Route index element={<Mainpage />} />
-			<Route path="/select" element={<Selectplan />} />
 		</Route>
 	)
 );
