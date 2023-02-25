@@ -10,12 +10,15 @@ import {
 } from "react-router-dom";
 import Mainpage from "./pages/Mainpage";
 import Selectplan from "./pages/Selectplan";
-import { firstPageAction } from "./components/FirstPageForm";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route>
-			<Route index element={<Mainpage />} />
+			<Route
+				path="k1337xz.github.io/multi-step-form-react/"
+				element={<Mainpage />}
+			/>
+			<Route path="/select" element={<Selectplan />} />
 		</Route>
 	)
 );
