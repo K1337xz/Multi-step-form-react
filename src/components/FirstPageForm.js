@@ -12,9 +12,6 @@ export default function FirstPageForm() {
 					<input type="name" placeholder="e.g Stephen King" />
 				</label>
 			</Form>
-			<div>
-				<Link to="/select">13123</Link>
-			</div>
 		</div>
 	);
 }
