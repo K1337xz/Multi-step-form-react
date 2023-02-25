@@ -14,7 +14,7 @@ import Selectplan from "./pages/Selectplan";
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route>
-			<Route path="multi-step-form-react/" element={<Mainpage />} />
+			<Route path="/multi-step-form-react" element={<Mainpage />} />
 			<Route path="/select" element={<Selectplan />} />
 		</Route>
 	)
