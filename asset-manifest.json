@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/k1337xz.github.io/multi-step-form-react/static/css/main.31d6cfe0.css",
-    "main.js": "/k1337xz.github.io/multi-step-form-react/static/js/main.2469cdee.js",
+    "main.js": "/k1337xz.github.io/multi-step-form-react/static/js/main.af98617a.js",
     "index.html": "/k1337xz.github.io/multi-step-form-react/index.html",
-    "main.2469cdee.js.map": "/k1337xz.github.io/multi-step-form-react/static/js/main.2469cdee.js.map"
+    "main.af98617a.js.map": "/k1337xz.github.io/multi-step-form-react/static/js/main.af98617a.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.2469cdee.js"
+    "static/js/main.af98617a.js"
   ]
 }
