@@ -15,7 +15,10 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route>
 			<Route path="/multi-step-form-react" element={<Mainpage />} />
-			<Route path="/select" element={<Selectplan />} />
+			<Route
+				path="/multi-step-form-react/select"
+				element={<Selectplan />}
+			/>
 		</Route>
 	)
 );

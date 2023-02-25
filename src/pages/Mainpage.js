@@ -10,7 +10,11 @@ export default function Mainpage() {
 			<h1>Personal info</h1>
 			<p>Please provide your name,email address, and phone number</p>
 			<div className="form">
-				<Form method="" action="/select" onSubmit={heh}>
+				<Form
+					method=""
+					action="/multi-step-form-react/select"
+					onSubmit={heh}
+				>
 					<label htmlFor="name">
 						<input type="name" placeholder="e.g Stephen King" />
 					</label>
