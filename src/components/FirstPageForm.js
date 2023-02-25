@@ -8,9 +8,9 @@ export default function FirstPageForm() {
 	return (
 		<div className="formWrapper">
 			<Form method="post" action="/select" onSubmit={heh}>
-				<label htmlFor="name">
+				{/* 				<label htmlFor="name">
 					<input type="name" placeholder="e.g Stephen King" />
-				</label>
+				</label> */}
 			</Form>
 		</div>
 	);

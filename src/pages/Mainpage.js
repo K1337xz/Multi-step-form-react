@@ -1,6 +1,6 @@
 import React from "react";
 import { Form } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 export default function Mainpage() {
 	function heh() {
 		console.log("sj");
