@@ -2,15 +2,13 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 export default function Mainpage() {
-	function heh() {
-		console.log("sj");
-	}
+	function heh(e) {}
 	return (
 		<div className="rightContent">
 			<h1>Personal info</h1>
 			<p>Please provide your name,email address, and phone number</p>
 			<div className="form">
-				<form action="/select" onSubmit={heh} method="post">
+				<form onSubmit={heh}>
 					<label htmlFor="name">
 						Name:
 						<input
