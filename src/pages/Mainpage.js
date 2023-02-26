@@ -10,7 +10,7 @@ export default function Mainpage() {
 			<h1>Personal info</h1>
 			<p>Please provide your name,email address, and phone number</p>
 			<div className="form">
-				<form action="/select" onSubmit={heh} method="get">
+				<form action="/select" onSubmit={heh} method="post">
 					<label htmlFor="name">
 						Name:
 						<input
