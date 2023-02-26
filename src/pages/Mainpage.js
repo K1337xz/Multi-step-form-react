@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 export default function Mainpage() {
 	function heh() {
@@ -10,16 +10,33 @@ export default function Mainpage() {
 			<h1>Personal info</h1>
 			<p>Please provide your name,email address, and phone number</p>
 			<div className="form">
-				<Form
-					method=""
-					action="/multi-step-form-react/select"
-					onSubmit={heh}
-				>
+				<form method="post" onSubmit={heh}>
 					<label htmlFor="name">
-						<input type="name" placeholder="e.g Stephen King" />
+						Name:
+						<input
+							type="text"
+							placeholder="e.g Stephen King"
+							name="name"
+						/>
+					</label>
+					<label htmlFor="email">
+						Email address
+						<input
+							type="email"
+							placeholder="e.g stephenking@lorem.com"
+							name="emailAddres"
+						/>
+					</label>
+					<label htmlFor="phoneNumber">
+						Phone Number:
+						<input
+							type="number"
+							placeholder="e.g +1 234 567 890"
+							name="phoneNumber"
+						/>
 					</label>
 					<button>Submit</button>
-				</Form>
+				</form>
 			</div>
 		</div>
 	);
