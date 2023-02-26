@@ -1,7 +1,7 @@
 {
 	"name": "multi-step-form-react",
 	"version": "0.1.0",
-	"private": true,
+	"private": "false",
 	"homepage": "k1337xz.github.io/multi-step-form-react/",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
