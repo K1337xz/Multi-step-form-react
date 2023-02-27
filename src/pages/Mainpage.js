@@ -63,6 +63,7 @@ export default function Mainpage(props) {
 					<label htmlFor="name">
 						Name:
 						<span className="error">{formError.nameError}</span>
+						<br />
 						<input
 							type="text"
 							placeholder="e.g Stephen King"
@@ -74,6 +75,7 @@ export default function Mainpage(props) {
 					<label htmlFor="email">
 						Email address
 						<span className="error">{formError.emailError}</span>
+						<br />
 						<input
 							type="email"
 							placeholder="e.g stephenking@lorem.com"
@@ -85,6 +87,7 @@ export default function Mainpage(props) {
 					<label htmlFor="phoneNumber">
 						Phone Number:
 						<span className="error">{formError.phoneError}</span>
+						<br />
 						<input
 							type="number"
 							placeholder="e.g +1 234 567 890"
