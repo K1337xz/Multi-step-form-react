@@ -5,7 +5,6 @@ import {
 	BrowserRouter,
 	Routes,
 	Route,
-	Link,
 	RouterProvider,
 } from "react-router-dom";
 import Mainpage from "./pages/Mainpage";
