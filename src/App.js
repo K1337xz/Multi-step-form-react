@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 import Mainpage from "./pages/Mainpage";
 import Selectplan from "./pages/Selectplan";
-import SideBar from "./components/SideBar";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -26,7 +25,6 @@ export default function App() {
 	return (
 		<main className="container">
 			<div className="cardWrapper">
-				<SideBar />
 				<RouterProvider router={router} />
 			</div>
 		</main>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import SideBar from "../components/SideBar";
 export default function Mainpage(props) {
 	const navigate = useNavigate();
 	const [formError, setFormErrors] = React.useState({});
@@ -51,54 +51,64 @@ export default function Mainpage(props) {
 	}
 
 	return (
-		<div className="rightContent">
-			<h1>Personal info</h1>
-			<p>Please provide your name,email address, and phone number</p>
-			<div className="form">
-				<form
-					onSubmit={(event) => {
-						nextStep(event);
-					}}
-				>
-					<label htmlFor="name">
-						Name:
-						<span className="error">{formError.nameError}</span>
-						<br />
-						<input
-							type="text"
-							placeholder="e.g Stephen King"
-							name="firstName"
-							onChange={inputValues}
-							value={formData.firstName}
-						/>
-					</label>
-					<label htmlFor="email">
-						Email address
-						<span className="error">{formError.emailError}</span>
-						<br />
-						<input
-							type="email"
-							placeholder="e.g stephenking@lorem.com"
-							name="emailAddres"
-							onChange={inputValues}
-							value={formData.emailAddres}
-						/>
-					</label>
-					<label htmlFor="phoneNumber">
-						Phone Number:
-						<span className="error">{formError.phoneError}</span>
-						<br />
-						<input
-							type="number"
-							placeholder="e.g +1 234 567 890"
-							name="phoneNumber"
-							onChange={inputValues}
-							value={formData.phoneNumber}
-						/>
-					</label>
-					<button>Submit</button>
-				</form>
+		<>
+			<SideBar stepNumber="stepNumber" active="stepNumber active" />
+			<div className="rightContent">
+				<h1>Personal info</h1>
+				<p>Please provide your name,email address, and phone number</p>
+				<div className="form">
+					<form
+						onSubmit={(event) => {
+							nextStep(event);
+						}}
+					>
+						<label htmlFor="name">
+							Name:
+							<span className="error">{formError.nameError}</span>
+							<br />
+							<input
+								type="text"
+								placeholder="e.g Stephen King"
+								name="firstName"
+								onChange={inputValues}
+								value={formData.firstName}
+							/>
+						</label>
+						<label htmlFor="email">
+							Email address
+							<span className="error">
+								{formError.emailError}
+							</span>
+							<br />
+							<input
+								type="email"
+								placeholder="e.g stephenking@lorem.com"
+								name="emailAddres"
+								onChange={inputValues}
+								value={formData.emailAddres}
+							/>
+						</label>
+						<label htmlFor="phoneNumber">
+							Phone Number:
+							<span className="error">
+								{formError.phoneError}
+							</span>
+							<br />
+							<input
+								type="text"
+								placeholder="e.g +1 234 567 890"
+								name="phoneNumber"
+								onChange={inputValues}
+								value={formData.phoneNumber}
+								min="0"
+							/>
+						</label>
+						<div className="lowerButtons">
+							<button>Next Step</button>
+						</div>
+					</form>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }

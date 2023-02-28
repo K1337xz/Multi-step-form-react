@@ -24,18 +24,101 @@ body {
 	background-color: $White;
 	height: 70%;
 	width: 50%;
+	border-radius: 2%;
 	.leftSideBar {
-		width: 50%;
+		width: 29%;
 		height: 90%;
 		background-image: url("./assets/images/bg-sidebar-desktop.svg");
 		background-repeat: no-repeat;
 		padding: 3rem 4rem;
 		.sideBarContent {
-			ol {
-				list-style-type: none;
-				li {
-					&::before {
-						content: "1";
+			.step {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				width: 20vh;
+				height: 7vh;
+				.stepNumber {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 4vh;
+					height: 4vh;
+					border: 1px solid $White;
+					border-radius: 50%;
+					color: $White;
+					&.active {
+						background-color: $Lightblue;
+						color: $Marineblue;
+						font-weight: 700;
+					}
+				}
+				.stepContent {
+					p {
+						&:first-child {
+							color: $Coolgray;
+							text-transform: uppercase;
+							font-size: 13px;
+						}
+						&:last-child {
+							color: $White;
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
+		}
+	}
+	.rightContent {
+		width: 68%;
+		height: 90%;
+		padding: 4rem;
+		h1 {
+			color: $Marineblue;
+		}
+		.form {
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+				margin-top: 3rem;
+				label {
+					position: relative;
+					width: 100%;
+					color: $Marineblue;
+					span {
+						position: absolute;
+						right: 0;
+						color: $Strawberryred;
+						font-weight: 700;
+					}
+				}
+				input {
+					height: 5vh;
+					width: 100%;
+					border-radius: 5px;
+					border: 1px solid $Coolgray;
+					outline: none;
+					margin-top: 5px;
+					padding-left: 2rem;
+					&:focus {
+						border: 2px solid $Purplishblue;
+					}
+				}
+				.lowerButtons {
+					display: flex;
+					justify-content: flex-end;
+					width: 100%;
+					button {
+						width: 20%;
+						height: 5vh;
+						background-color: $Marineblue;
+						color: $White;
+						font-weight: 700;
+						cursor: pointer;
+						border-radius: 7px;
+						border: none;
+						outline: none;
 					}
 				}
 			}
