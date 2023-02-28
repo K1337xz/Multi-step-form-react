@@ -38,6 +38,13 @@ body {
 				gap: 1rem;
 				width: 20vh;
 				height: 7vh;
+				&.active {
+					.stepNumber {
+						background-color: $Lightblue;
+						color: $Marineblue;
+						font-weight: 700;
+					}
+				}
 				.stepNumber {
 					display: flex;
 					align-items: center;

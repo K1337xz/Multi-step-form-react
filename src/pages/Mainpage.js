@@ -52,7 +52,13 @@ export default function Mainpage(props) {
 
 	return (
 		<>
-			<SideBar stepNumber="stepNumber" active="stepNumber active" />
+			<SideBar
+				stepNumber="stepNumber"
+				first="step active"
+				second="step"
+				third="step"
+				fourth="step"
+			/>
 			<div className="rightContent">
 				<h1>Personal info</h1>
 				<p>Please provide your name,email address, and phone number</p>

@@ -5,8 +5,8 @@ export default function SideBar(props) {
 		<div className="leftSideBar">
 			<div className="sideBarContent">
 				<div className="navWrapper">
-					<div className="step">
-						<div className={(props.stepNumber, props.active)}>
+					<div className={props.first}>
+						<div className={props.stepNumber}>
 							<p>1</p>
 						</div>
 						<div className="stepContent">
@@ -14,7 +14,7 @@ export default function SideBar(props) {
 							<p>Your Info</p>
 						</div>
 					</div>
-					<div className="step">
+					<div className={props.second}>
 						<div className={props.stepNumber}>
 							<p>2</p>
 						</div>
@@ -23,7 +23,7 @@ export default function SideBar(props) {
 							<p>Select plan</p>
 						</div>
 					</div>
-					<div className="step">
+					<div className={props.third}>
 						<div className={props.stepNumber}>
 							<p>3</p>
 						</div>
@@ -32,7 +32,7 @@ export default function SideBar(props) {
 							<p>Add-ons</p>
 						</div>
 					</div>
-					<div className="step">
+					<div className={props.fourth}>
 						<div className={props.stepNumber}>
 							<p>4</p>
 						</div>
