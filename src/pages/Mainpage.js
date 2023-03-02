@@ -110,7 +110,7 @@ export default function Mainpage(props) {
 							/>
 						</label>
 						<div className="lowerButtons">
-							<button>Next Step</button>
+							<button className="nextStp">Next Step</button>
 						</div>
 					</form>
 				</div>

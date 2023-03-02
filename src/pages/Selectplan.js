@@ -44,6 +44,10 @@ export default function Selectplan() {
 						<span>Yearly</span>
 					</label>
 				</div>
+				<div className="lowerButtons">
+					<button>Go back!</button>
+					<button className="nextStp">Next Step</button>
+				</div>
 			</div>
 		</>
 	);
