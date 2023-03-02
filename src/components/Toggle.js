@@ -1,11 +1,12 @@
-import { React } from "react";
+import { useState } from "react";
 
 export const Toggle = ({ label, toggled, onClick }) => {
-	const [isToggled, toggle] = React.useState(toggled);
+	const [isToggled, toggle] = useState(toggled);
 
 	const callback = () => {
 		toggle(!isToggled);
 		onClick(!isToggled);
+		/* 	console.log(isToggled); */
 	};
 
 	return (
@@ -16,7 +17,6 @@ export const Toggle = ({ label, toggled, onClick }) => {
 				onClick={callback}
 			/>
 			<span />
-			<strong>{label}</strong>
 		</label>
 	);
 };
