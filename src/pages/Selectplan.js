@@ -4,7 +4,12 @@ import Plancard from "../components/Plancard";
 import arcade from "../assets/images/icon-arcade.svg";
 import advanced from "../assets/images/icon-advanced.svg";
 import pro from "../assets/images/icon-pro.svg";
+import Toggle from "../components/Toggle";
+
 export default function Selectplan() {
+	const logState = (state) => {
+		console.log("Toggled:", state);
+	};
 	return (
 		<>
 			<SideBar
@@ -38,11 +43,11 @@ export default function Selectplan() {
 					/>
 				</div>
 				<div className="lowerCheckbox">
-					<label htmlFor="lowerCheck">
-						Monthly
-						<input type="checkbox" />
-						<span>Yearly</span>
-					</label>
+					<Toggle
+						label="Toggle me"
+						toggled={true}
+						onClick={logState}
+					/>
 				</div>
 				<div className="lowerButtons">
 					<button>Go back!</button>
