@@ -5,11 +5,23 @@ import arcade from "../assets/images/icon-arcade.svg";
 import advanced from "../assets/images/icon-advanced.svg";
 import pro from "../assets/images/icon-pro.svg";
 import { Toggle } from "../components/Toggle";
+import { useNavigate } from "react-router-dom";
 
 export default function Selectplan() {
-	const logState = (state) => {
-		console.log(state);
-	};
+	const navigate = useNavigate();
+	const [checked, setChecked] = React.useState();
+
+	function logState(state) {
+		setChecked(state);
+		console.log(checked);
+	}
+
+	function goBackButton() {
+		navigate("/multi-step-form-react");
+	}
+	function nextStp() {
+		navigate("/multi-step-form-react/addons");
+	}
 	return (
 		<>
 			<SideBar
@@ -26,19 +38,19 @@ export default function Selectplan() {
 					<Plancard
 						src={arcade}
 						cardName="Arcade"
-						cardPrice="$9/mo"
+						cardPrice={!checked ? "$9/mo" : "$90/yr"}
 						id="arcade"
 					/>
 					<Plancard
 						src={advanced}
 						cardName="Advanced"
-						cardPrice="$12/mo"
+						cardPrice={!checked ? "$12/mo" : "$120/yr"}
 						id="advanced"
 					/>
 					<Plancard
 						src={pro}
 						cardName="Pro"
-						cardPrice="$15/mo"
+						cardPrice={!checked ? "$15/mo" : "$150/yr"}
 						id="pro"
 					/>
 				</div>
@@ -52,8 +64,10 @@ export default function Selectplan() {
 					<p className="yearly">Yearly</p>
 				</div>
 				<div className="lowerButtons">
-					<button>Go back!</button>
-					<button className="nextStp">Next Step</button>
+					<button onClick={goBackButton}>Go back!</button>
+					<button className="nextStp" onClick={nextStp}>
+						Next Step
+					</button>
 				</div>
 			</div>
 		</>

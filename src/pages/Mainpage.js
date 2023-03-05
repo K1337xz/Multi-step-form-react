@@ -110,6 +110,9 @@ export default function Mainpage(props) {
 							/>
 						</label>
 						<div className="lowerButtons">
+							<button style={{ visibility: "hidden" }}>
+								Go back!
+							</button>
 							<button className="nextStp">Next Step</button>
 						</div>
 					</form>

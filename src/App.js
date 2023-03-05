@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Mainpage from "./pages/Mainpage";
 import Selectplan from "./pages/Selectplan";
+import Addons from "./pages/Addons";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
 				path="/multi-step-form-react/select"
 				element={<Selectplan />}
 			/>
+			<Route path="/multi-step-form-react/addons" element={<Addons />} />
 		</Route>
 	)
 );

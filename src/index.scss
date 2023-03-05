@@ -178,7 +178,7 @@ body {
 			gap: 1rem;
 		}
 	}
-	label {
+	.customCheckbox {
 		position: relative;
 		display: inline-block;
 		width: 45px;
@@ -190,7 +190,7 @@ body {
 		}
 	}
 
-	span {
+	.checkSpan {
 		position: absolute;
 		cursor: pointer;
 		top: 0;
@@ -212,10 +212,10 @@ body {
 			transition: 0.3s;
 		}
 	}
-	input:checked + span + .yearly {
+	input:checked + .checkSpan + .yearly {
 		background-color: $Marineblue;
 	}
-	input:checked + span:before {
+	input:checked + .checkSpan:before {
 		transform: translateX(23px);
 	}
 }

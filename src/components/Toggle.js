@@ -10,13 +10,14 @@ export const Toggle = ({ label, toggled, onClick }) => {
 	};
 
 	return (
-		<label>
+		<label htmlFor="checkMonthly" className="customCheckbox">
 			<input
 				type="checkbox"
 				defaultChecked={isToggled}
 				onClick={callback}
+				id="checkMonthly"
 			/>
-			<span />
+			<span className="checkSpan" />
 		</label>
 	);
 };
