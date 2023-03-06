@@ -46,9 +46,20 @@ export default function Mainpage(props) {
 			formData.phoneNumber > 0 &&
 			formData.emailAddres.match(regEx)
 		) {
-			navigate("/multi-step-form-react/select");
+			setFromData((prevData) => {
+				return {
+					...prevData,
+					isValid: true,
+				};
+			});
 		}
 	}
+	React.useEffect(() => {
+		if (formData.isValid) {
+			localStorage.setItem("name", JSON.stringify(formData));
+			navigate("/multi-step-form-react/select");
+		}
+	}, [nextStep]);
 
 	return (
 		<>

@@ -14,6 +14,7 @@ export default function Addons() {
 			<div className="rightContent">
 				<h1>Pick add-ons</h1>
 				<p>Add-ons help enhance your gaming experience</p>
+				<div className="addonsWrapper"></div>
 			</div>
 		</>
 	);
