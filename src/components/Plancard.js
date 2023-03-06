@@ -2,22 +2,30 @@ import React from "react";
 
 export default function Plancard(props) {
 	const [plan, setPlan] = React.useState({});
-
+	const [formData, setFromData] = React.useState();
 	function toggleClick(e) {
 		const allElements = document.querySelectorAll(".card");
+
+		let id = e.currentTarget.id;
 		for (let i = 0; i < allElements.length; i++) {
 			if (allElements[i].classList.contains("active")) {
 				allElements[i].classList.remove("active");
 			}
 			e.currentTarget.classList.add("active");
 		}
-		console.log(e.currentTarget.id);
+		setPlan(() => {
+			return {
+				id: id,
+			};
+		});
+		console.log(plan);
 	}
+
 	return (
 		<div
 			className="card"
-			onClick={(e) => {
-				toggleClick(e);
+			onClick={(event) => {
+				toggleClick(event);
 			}}
 			id={props.id}
 		>
