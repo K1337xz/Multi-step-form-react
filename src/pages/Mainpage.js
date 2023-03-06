@@ -61,6 +61,20 @@ export default function Mainpage(props) {
 		}
 	}, [nextStep]);
 
+	React.useEffect(() => {
+		const items = JSON.parse(localStorage.getItem("name"));
+		if (items) {
+			setFromData(() => {
+				return {
+					firstName: items.firstName,
+					emailAddres: items.emailAddres,
+					phoneNumber: items.phoneNumber,
+					isValid: false,
+				};
+			});
+		}
+	}, []);
+
 	return (
 		<>
 			<SideBar

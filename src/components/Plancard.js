@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function Plancard(props) {
+	const [plan, setPlan] = React.useState({});
+
 	function toggleClick(e) {
 		const allElements = document.querySelectorAll(".card");
 		for (let i = 0; i < allElements.length; i++) {
@@ -9,6 +11,7 @@ export default function Plancard(props) {
 			}
 			e.currentTarget.classList.add("active");
 		}
+		console.log(e.currentTarget.id);
 	}
 	return (
 		<div
@@ -24,6 +27,7 @@ export default function Plancard(props) {
 			<div className="cardContent">
 				<h2>{props.cardName}</h2>
 				<p>{props.cardPrice}</p>
+				<span>{props.freeMonths}</span>
 			</div>
 		</div>
 	);

@@ -39,18 +39,21 @@ export default function Selectplan() {
 						src={arcade}
 						cardName="Arcade"
 						cardPrice={!checked ? "$9/mo" : "$90/yr"}
+						freeMonths={!checked ? "" : "2 months free"}
 						id="arcade"
 					/>
 					<Plancard
 						src={advanced}
 						cardName="Advanced"
 						cardPrice={!checked ? "$12/mo" : "$120/yr"}
+						freeMonths={!checked ? "" : "2 months free"}
 						id="advanced"
 					/>
 					<Plancard
 						src={pro}
 						cardName="Pro"
 						cardPrice={!checked ? "$15/mo" : "$150/yr"}
+						freeMonths={!checked ? "" : "2 months free"}
 						id="pro"
 					/>
 				</div>
