@@ -8,6 +8,7 @@ export default function Mainpage(props) {
 		firstName: "",
 		emailAddres: "",
 		phoneNumber: "",
+
 		isValid: false,
 	});
 
@@ -49,6 +50,8 @@ export default function Mainpage(props) {
 			setFromData((prevData) => {
 				return {
 					...prevData,
+					selectedPlan: "",
+					monthly: false,
 					isValid: true,
 				};
 			});

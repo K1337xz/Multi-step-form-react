@@ -2,10 +2,9 @@ import React from "react";
 
 export default function Plancard(props) {
 	const [plan, setPlan] = React.useState({});
-	const [formData, setFromData] = React.useState();
+	const [formData, setFromData] = React.useState({});
 	function toggleClick(e) {
 		const allElements = document.querySelectorAll(".card");
-
 		let id = e.currentTarget.id;
 		for (let i = 0; i < allElements.length; i++) {
 			if (allElements[i].classList.contains("active")) {
@@ -13,13 +12,23 @@ export default function Plancard(props) {
 			}
 			e.currentTarget.classList.add("active");
 		}
-		setPlan(() => {
+
+		setPlan((prev) => {
 			return {
 				id: id,
 			};
 		});
-		console.log(plan);
 	}
+	React.useEffect(() => {
+		const items = JSON.parse(localStorage.getItem("name"));
+		let planId = plan.id;
+		if (!planId) {
+			console.log(undefined);
+		} else if (planId.length > 0) {
+			items.selectedPlan = planId;
+			localStorage.setItem("name", JSON.stringify(items));
+		}
+	}, [plan]);
 
 	return (
 		<div
