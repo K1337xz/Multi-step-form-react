@@ -9,11 +9,12 @@ import { useNavigate } from "react-router-dom";
 
 export default function Selectplan() {
 	const navigate = useNavigate();
-	const [checked, setChecked] = React.useState();
+	const [checked, setChecked] = React.useState(false);
+	const [formData, setFromData] = React.useState({});
 
 	function logState(state) {
-		setChecked(state);
-		console.log(checked);
+		setChecked((state) => !state);
+		console.log(formData);
 	}
 
 	function goBackButton() {
@@ -22,6 +23,12 @@ export default function Selectplan() {
 	function nextStp() {
 		navigate("/multi-step-form-react/addons");
 	}
+
+	React.useEffect(() => {
+		const items = JSON.parse(localStorage.getItem("name"));
+		items.monthly = checked;
+		localStorage.setItem("name", JSON.stringify(items));
+	}, [checked]);
 	return (
 		<>
 			<SideBar
@@ -59,11 +66,7 @@ export default function Selectplan() {
 				</div>
 				<div className="lowerCheckbox">
 					<p className="monthly">Monthly</p>
-					<Toggle
-						label="Toggle me"
-						toggled={false}
-						onClick={logState}
-					/>
+					<Toggle label="Toggle me" onClick={logState} />
 					<p className="yearly">Yearly</p>
 				</div>
 				<div className="lowerButtons">

@@ -23,7 +23,7 @@ export default function Plancard(props) {
 		const items = JSON.parse(localStorage.getItem("name"));
 		let planId = plan.id;
 		if (!planId) {
-			console.log(undefined);
+			return;
 		} else if (planId.length > 0) {
 			items.selectedPlan = planId;
 			localStorage.setItem("name", JSON.stringify(items));

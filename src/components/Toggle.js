@@ -6,7 +6,6 @@ export const Toggle = ({ label, toggled, onClick }) => {
 	const callback = () => {
 		toggle(!isToggled);
 		onClick(!isToggled);
-		/* 	console.log(isToggled); */
 	};
 
 	return (
