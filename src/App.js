@@ -10,7 +10,7 @@ import {
 import Mainpage from "./pages/Mainpage";
 import Selectplan from "./pages/Selectplan";
 import Addons from "./pages/Addons";
-
+import Summary from "./pages/Summary";
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route basename="/multi-step-form-react">
@@ -20,6 +20,10 @@ const router = createBrowserRouter(
 				element={<Selectplan />}
 			/>
 			<Route path="/multi-step-form-react/addons" element={<Addons />} />
+			<Route
+				path="/multi-step-form-react/summary"
+				element={<Summary />}
+			/>
 		</Route>
 	)
 );

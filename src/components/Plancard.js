@@ -28,11 +28,23 @@ export default function Plancard(props) {
 			items.selectedPlan = planId;
 			localStorage.setItem("name", JSON.stringify(items));
 		}
+		if (planId === `arcade`) {
+			items.planPrice = 9;
+			localStorage.setItem("name", JSON.stringify(items));
+		}
+		if (planId === `advanced`) {
+			items.planPrice = 12;
+			localStorage.setItem("name", JSON.stringify(items));
+		}
+		if (planId === `pro`) {
+			items.planPrice = 15;
+			localStorage.setItem("name", JSON.stringify(items));
+		}
 	}, [plan]);
 
 	return (
 		<div
-			className="card"
+			className={props.cardClass}
 			onClick={(event) => {
 				toggleClick(event);
 			}}

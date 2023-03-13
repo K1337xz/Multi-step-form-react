@@ -51,6 +51,7 @@ export default function Mainpage(props) {
 				return {
 					...prevData,
 					selectedPlan: "",
+					planPrice: 0,
 					monthly: false,
 					isValid: true,
 				};
