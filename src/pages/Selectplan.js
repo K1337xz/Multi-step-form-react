@@ -73,6 +73,19 @@ export default function Selectplan() {
 				items.planPrice = 150;
 				localStorage.setItem("name", JSON.stringify(items));
 			}
+		} else {
+			if (items.selectedPlan === "arcade") {
+				items.planPrice = 9;
+				localStorage.setItem("name", JSON.stringify(items));
+			}
+			if (items.selectedPlan === "advanced") {
+				items.planPrice = 12;
+				localStorage.setItem("name", JSON.stringify(items));
+			}
+			if (items.selectedPlan === "pro") {
+				items.planPrice = 15;
+				localStorage.setItem("name", JSON.stringify(items));
+			}
 		}
 		localStorage.setItem("name", JSON.stringify(items));
 	}, [checked]);

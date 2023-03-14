@@ -5,31 +5,54 @@ import { useNavigate } from "react-router-dom";
 
 export default function Addons() {
 	const navigate = useNavigate();
+	const [bla, setBla] = React.useState({
+		online: false,
+		storage: false,
+		profile: false,
+	});
 	const [biling, setBiling] = React.useState();
 	const [isChecked, setIsChecked] = React.useState({
 		online: false,
 		storage: false,
 		profile: false,
-		onlinePrice: 1,
-		storagePrice: 2,
-		profilePrice: 2,
+		onlinePrice: 0,
+		storagePrice: 0,
+		profilePrice: 0,
 	});
 
 	React.useEffect(() => {
 		const items = JSON.parse(localStorage.getItem("name"));
 		setBiling(items.monthly);
-		if (items.monthly) {
+		if (isChecked.onlinePrice > 0 && items.monthly) {
 			setIsChecked((prev) => {
 				return {
 					...prev,
 					onlinePrice: 10,
-					storagePrice: 20,
-					profilePrice: 20,
 				};
 			});
 			localStorage.setItem("addons", JSON.stringify(isChecked));
 		}
-	});
+		if (isChecked.storagePrice > 0 && items.monthly) {
+			setIsChecked((prev) => {
+				return {
+					...prev,
+					storagePrice: 20,
+				};
+			});
+
+			localStorage.setItem("addons", JSON.stringify(isChecked));
+		}
+		if (isChecked.profilePrice > 0 && items.monthly) {
+			setIsChecked((prev) => {
+				return {
+					...prev,
+					profilePrice: 20,
+				};
+			});
+
+			localStorage.setItem("addons", JSON.stringify(isChecked));
+		}
+	}, [bla]);
 
 	React.useEffect(() => {
 		localStorage.setItem("addons", JSON.stringify(isChecked));
@@ -42,6 +65,13 @@ export default function Addons() {
 				return {
 					...prev,
 					online: !prev.online,
+					onlinePrice: 1,
+				};
+			});
+			setBla((prev) => {
+				return {
+					...prev,
+					online: true,
 				};
 			});
 		}
@@ -50,6 +80,13 @@ export default function Addons() {
 				return {
 					...prev,
 					storage: !prev.storage,
+					storagePrice: 2,
+				};
+			});
+			setBla((prev) => {
+				return {
+					...prev,
+					storage: true,
 				};
 			});
 		}
@@ -58,6 +95,13 @@ export default function Addons() {
 				return {
 					...prev,
 					profile: !prev.profile,
+					profilePrice: 2,
+				};
+			});
+			setBla((prev) => {
+				return {
+					...prev,
+					profile: true,
 				};
 			});
 		}

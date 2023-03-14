@@ -27,7 +27,12 @@ export default function Summary() {
 			};
 		});
 	}, []);
-	console.log(formData);
+
+	let totalPriceM =
+		formData.storagePrice +
+		formData.profilePrice +
+		formData.onlinePrice +
+		formData.planPrice;
 	return (
 		<>
 			<SideBar
@@ -43,8 +48,9 @@ export default function Summary() {
 				<Finishpage
 					selectedPlan={formData.plan}
 					bilingPlan={formData.billing ? "Yearly" : "Monthly"}
-					price={formData.planPrice}
-					bill={formData.billing ? "yr" : "mo"}
+					price={`$${formData.planPrice}/${
+						formData.billing ? "yr" : "mo"
+					}`}
 					online={formData.onlinePlan ? "Online service" : ""}
 					onlinePrice={
 						formData.onlinePlan
@@ -69,7 +75,17 @@ export default function Summary() {
 					}
 					storage={formData.largerPlan ? "Larger storage" : ""}
 					profile={formData.profilePlan ? "Customizable profile" : ""}
+					totalBIlling={
+						formData.billing ? "(per year)" : "(per month)"
+					}
+					totalPrice={`+$${totalPriceM}/${
+						formData.billing ? "yr" : "mo"
+					}`}
 				/>
+				<div className="lowerButtons">
+					<button className="prevStp">Go back!</button>
+					<button className="confirm">Confirm</button>
+				</div>
 			</div>
 		</>
 	);
