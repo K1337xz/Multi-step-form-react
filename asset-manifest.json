@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/multi-step-form-react/static/css/main.ebf09f2e.css",
-    "main.js": "/multi-step-form-react/static/js/main.f6d66097.js",
+    "main.css": "/multi-step-form-react/static/css/main.321cc96d.css",
+    "main.js": "/multi-step-form-react/static/js/main.d95947e5.js",
     "static/media/bg-sidebar-desktop.svg": "/multi-step-form-react/static/media/bg-sidebar-desktop.6918153f38678372ceb1.svg",
+    "static/media/bg-sidebar-mobile.svg": "/multi-step-form-react/static/media/bg-sidebar-mobile.ad41661b40ca0b967f3a.svg",
     "static/media/icon-advanced.svg": "/multi-step-form-react/static/media/icon-advanced.705bd10c4c1f688871d729633f0ca4ae.svg",
     "static/media/icon-thank-you.svg": "/multi-step-form-react/static/media/icon-thank-you.ee753f231cc5a5789b8eb922a96472c0.svg",
     "index.html": "/multi-step-form-react/index.html",
     "static/media/icon-pro.svg": "/multi-step-form-react/static/media/icon-pro.2e7e377da9c658d608624304a0f8dae6.svg",
     "static/media/icon-arcade.svg": "/multi-step-form-react/static/media/icon-arcade.a08c098289a31bb2f66d675be71565b3.svg",
-    "main.ebf09f2e.css.map": "/multi-step-form-react/static/css/main.ebf09f2e.css.map",
-    "main.f6d66097.js.map": "/multi-step-form-react/static/js/main.f6d66097.js.map"
+    "main.321cc96d.css.map": "/multi-step-form-react/static/css/main.321cc96d.css.map",
+    "main.d95947e5.js.map": "/multi-step-form-react/static/js/main.d95947e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebf09f2e.css",
-    "static/js/main.f6d66097.js"
+    "static/css/main.321cc96d.css",
+    "static/js/main.d95947e5.js"
   ]
 }
