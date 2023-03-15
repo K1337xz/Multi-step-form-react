@@ -2,8 +2,10 @@ import React from "react";
 import Finishpage from "../components/Finishpage";
 import SideBar from "../components/SideBar";
 import Thankyoupage from "../components/Thankyoupage";
+import { useNavigate } from "react-router-dom";
 
 export default function Summary() {
+	const navigate = useNavigate();
 	const [isShownFinal, setIsShownFinal] = React.useState(false);
 	const [isShownFinish, setIsShownFinish] = React.useState(true);
 	const [formData, setFormData] = React.useState({
@@ -36,6 +38,21 @@ export default function Summary() {
 			};
 		});
 	}, []);
+
+	React.useEffect(() => {
+		if (isShownFinal) {
+			const timer = setTimeout(() => {
+				localStorage.removeItem("name");
+				localStorage.removeItem("addons");
+				navigate("/multi-step-form-react");
+			}, 5000);
+			return () => clearTimeout(timer);
+		}
+	}, [isShownFinal]);
+
+	function goBack() {
+		navigate("/multi-step-form-react/addons");
+	}
 
 	let totalPriceM =
 		formData.storagePrice +
@@ -95,7 +112,9 @@ export default function Summary() {
 						}`}
 					/>
 					<div className="lowerButtons">
-						<button className="prevStp">Go back!</button>
+						<button className="prevStp" onClick={goBack}>
+							Go back!
+						</button>
 						<button className="confirm" onClick={handleClick}>
 							Confirm
 						</button>
