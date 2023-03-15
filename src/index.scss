@@ -405,6 +405,399 @@
 	}
 }
 
+@include lg {
+	body {
+		width: 100%;
+		height: 100%;
+	}
+	#root {
+		width: 100%;
+		height: 100vh;
+		background-color: $Magnolia;
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+	.cardWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		background-color: $White;
+		height: 70%;
+		width: 50%;
+		border-radius: 2%;
+		.leftSideBar {
+			width: 29%;
+			height: 90%;
+			background-image: url("./assets/images/bg-sidebar-desktop.svg");
+			background-repeat: no-repeat;
+			padding: 3rem 4rem;
+			.sideBarContent {
+				.navWrapper {
+					display: flex;
+					gap: 2rem;
+					flex-direction: column;
+				}
+				.step {
+					display: flex;
+					align-items: center;
+					gap: 1rem;
+					width: 20vh;
+					height: 7vh;
+					&.active {
+						.stepNumber {
+							background-color: $Lightblue;
+							color: $Marineblue;
+							font-weight: 700;
+						}
+					}
+					.stepNumber {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						width: 4vh;
+						height: 4vh;
+						border: 1px solid $White;
+						border-radius: 50%;
+						color: $White;
+						&.active {
+							background-color: $Lightblue;
+							color: $Marineblue;
+							font-weight: 700;
+						}
+					}
+					.stepContent {
+						display: block;
+						p {
+							&:first-child {
+								color: $Coolgray;
+								text-transform: uppercase;
+								font-size: 13px;
+							}
+							&:last-child {
+								color: $White;
+								text-transform: uppercase;
+							}
+						}
+					}
+				}
+			}
+		}
+		.rightContent {
+			width: 68%;
+			height: 90%;
+			padding: 4rem;
+			h1 {
+				color: $Marineblue;
+			}
+			.form {
+				form {
+					display: flex;
+					flex-direction: column;
+					gap: 2rem;
+					margin-top: 3rem;
+					label {
+						position: relative;
+						width: 100%;
+						color: $Marineblue;
+						span {
+							position: absolute;
+							right: 0;
+							color: $Strawberryred;
+							font-weight: 700;
+						}
+					}
+					input {
+						height: 5vh;
+						width: 100%;
+						border-radius: 5px;
+						border: 1px solid $Coolgray;
+						outline: none;
+						margin-top: 5px;
+						padding-left: 2rem;
+						&:focus {
+							border: 2px solid $Purplishblue;
+						}
+					}
+				}
+			}
+			.lowerButtons {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+				margin-top: 5rem;
+				.prevStp {
+					background-color: $White;
+					border: none;
+					outline: none;
+					cursor: pointer;
+					font-weight: 700;
+					color: $Coolgray;
+				}
+				.nextStp {
+					width: 20%;
+					height: 5vh;
+					background-color: $Marineblue;
+					color: $White;
+					font-weight: 700;
+					cursor: pointer;
+					border-radius: 7px;
+					border: none;
+					outline: none;
+				}
+				.confirm {
+					width: 20%;
+					height: 5vh;
+					background-color: $Purplishblue;
+					color: $White;
+					font-weight: 700;
+					cursor: pointer;
+					border-radius: 7px;
+					border: none;
+					outline: none;
+				}
+			}
+			.selectPlanForm {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: row;
+				gap: 2rem;
+				height: 55%;
+				margin-top: 1rem;
+				.card {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-evenly;
+					align-items: flex-start;
+					height: 65%;
+					width: 100%;
+					padding: 1rem;
+					border: 1px solid $Coolgray;
+					border-radius: 5px;
+					cursor: pointer;
+					h2 {
+						color: $Marineblue;
+						font-size: 20px;
+					}
+					p {
+						color: $Coolgray;
+						font-size: 14px;
+					}
+					span {
+						color: $Marineblue;
+						font-weight: 700;
+						font-size: 13px;
+					}
+					&:hover {
+						border: 2px solid $Purplishblue;
+					}
+					&.active {
+						background-color: $Magnolia;
+						border: 2px solid $Purplishblue;
+					}
+				}
+			}
+			.lowerCheckbox {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 13%;
+				border-radius: 10px;
+				background-color: $Magnolia;
+				gap: 1rem;
+			}
+		}
+		.customCheckbox {
+			position: relative;
+			display: inline-block;
+			width: 45px;
+			height: 20px;
+			input {
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+		}
+
+		.checkSpan {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: $Marineblue;
+			transition: 0.3s;
+			border-radius: 30px;
+			&::before {
+				position: absolute;
+				content: "";
+				height: 14px;
+				width: 14px;
+				left: 3px;
+				bottom: 2.6px;
+				background-color: #fff;
+				border-radius: 50%;
+				transition: 0.3s;
+			}
+		}
+		input:checked + .checkSpan + .yearly {
+			background-color: $Marineblue;
+		}
+		input:checked + .checkSpan:before {
+			transform: translateX(23px);
+		}
+		.addonsWrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 1rem;
+			.formAddons {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				gap: 2rem;
+				.addons {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+					width: 90%;
+					height: 9vh;
+					border: 1px solid gray;
+					padding: 2rem;
+					&.checked {
+						border: 2px solid $Purplishblue;
+						border-radius: 10px;
+					}
+					.addonContent {
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+						width: 65%;
+						h3 {
+							color: $Marineblue;
+						}
+						p {
+							color: $Coolgray;
+						}
+					}
+					span {
+						color: $Purplishblue;
+					}
+				}
+			}
+			.checkboxAddons input[type="checkbox"] {
+				-webkit-appearance: none;
+				appearance: none;
+				width: 1.6em;
+				height: 1.6em;
+				border-radius: 0.15em;
+				margin-right: 0.5em;
+				border: 1px solid $Coolgray;
+				outline: none;
+				cursor: pointer;
+			}
+			input.checked {
+				background-color: $Purplishblue;
+				position: relative;
+				&::before {
+					content: "\2713";
+					font-size: 15px;
+					color: #fff;
+					position: absolute;
+					right: 4px;
+					top: -2px;
+				}
+			}
+		}
+		.finshWrapper {
+			.price {
+				color: $Marineblue;
+				font-weight: 700;
+			}
+			p {
+				color: $Coolgray;
+				span {
+					color: $Marineblue;
+					font-weight: 700;
+				}
+			}
+			.finishContent {
+				background-color: $Magnolia;
+				width: 100%;
+				height: 50%;
+				padding: 0.5rem 1rem;
+				margin-top: 2rem;
+				.topfinishContent {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					width: 100%;
+					margin-top: 2rem;
+					h3 {
+						&::first-letter {
+							text-transform: uppercase;
+						}
+						color: $Marineblue;
+						span {
+							font-size: 15px;
+							font-weight: 400;
+						}
+					}
+				}
+				.services {
+					display: flex;
+					flex-direction: column;
+					gap: 1rem;
+					margin-top: 2rem;
+					p {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+					}
+				}
+			}
+			.bottomFinishContent {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 1rem;
+				.totalPrice {
+					color: $Purplishblue;
+					font-weight: 700;
+				}
+			}
+		}
+		.final {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-evenly;
+			width: 100%;
+			height: 75%;
+			margin-bottom: 0;
+			.finalContent {
+				text-align: center;
+				h1 {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	}
+}
+
 @include xl {
 	body {
 		width: 100%;
